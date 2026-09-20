@@ -26,41 +26,31 @@ float *__cdecl RB_CalcTransformTexCoords( float *tcMod, float *texCoords );
 #define tess_vertexComponentCount    tess_vertexComponentCount
 #define tess_xyz_base                ((float *)tess_xyz)
 #define backEnd_currentEntity        backEnd_currentEntity
-#define tr_sinTable                  flt_16D3850
+#define tr_sinTable                  tr_sinTable
 #define myftol_tmp                   ftol_tempSpill
 #define FUNCTABLE_SIZE               1024
 #define FUNCTABLE_MASK               1023
 
 /* ---- TableForFunc  0x005133D0 ----  VERIFIED */
-float *__cdecl TableForFunc(void *this)
+float *__cdecl TableForFunc(void *func)
 {
-  float *result;
-
-  switch ( (unsigned int)this )
+  switch ( (unsigned int)func )
   {
     case 1u:
-      result = flt_16D3850;
-      break;
+      return tr_sinTable;
     case 2u:
-      result = flt_16D4850;
-      break;
+      return tr_squareTable;
     case 3u:
-      result = flt_16D5850;
-      break;
+      return tr_triangleTable;
     case 4u:
-      result = flt_16D6850;
-      break;
+      return tr_sawToothTable;
     case 5u:
-      result = flt_16D7850;
-      break;
+      return tr_inverseSawToothTable;
     default:
-      ri_Error(1,
-               "\x15" "TableForFunc called with invalid function '%d' in shader '%s'\n",
-               this, tess_shader);
-      result = 0;
       break;
   }
-  return result;
+  ri_Error(1,"\x15" "TableForFunc called with invalid function '%d' in shader '%s'\n", func, tess_shader);
+  return NULL;
 }
 
 /* ---- EvalWaveForm  0x00513430 ----  VERIFIED */
@@ -410,7 +400,7 @@ int __cdecl RB_CalcBulgeVertexes(float *a1)
     do
     {
       ++v2;
-      v6 = flt_16D3850[(unsigned __int64)((a1[10] * *v3 + v7) * 162.9746551513671875) & 0x3FF]
+      v6 = tr_sinTable[(unsigned __int64)((a1[10] * *v3 + v7) * 162.9746551513671875) & 0x3FF]
          * a1[11];
       v3 += 2;
       v5 += 3;
@@ -1571,10 +1561,10 @@ float *__cdecl RB_CalcRotateTexCoords(float a1, float *a2)
   float v8;
 
   v2 = (unsigned __int64)(-(tess_shaderTime * a1) * 2.8444445133209228516);
-  v3 = flt_16D3850[v2 & 0x3FF];
+  v3 = tr_sinTable[v2 & 0x3FF];
   LODWORD(v2) = ((_WORD)v2 + 256) & 0x3FF;
-  v4 = flt_16D3850[(_DWORD)v2];
-  v7[6] = flt_16D3850[(_DWORD)v2];
+  v4 = tr_sinTable[(_DWORD)v2];
+  v7[6] = tr_sinTable[(_DWORD)v2];
   v7[8] = -v3;
   v6 = 0.5 * v4;
   v8 = v3 * 0.5;

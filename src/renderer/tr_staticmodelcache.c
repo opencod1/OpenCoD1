@@ -242,7 +242,7 @@ int __cdecl R_EvaluateLightingAtPoint(int a1, float *a2, float *a3, _BYTE *a4)
           {
             v27 = v32[2] * v8[23] + v32[1] * v8[22] + v32[0] * v8[21];
             v30 = (v8[28] + 90.0) * 2.8444445;
-            if ( v27 > (double)flt_16D3850[(int)(v30 + 9.313225746154785e-10) & 0x3FF] )
+            if ( v27 > (double)tr_sinTable[(int)(v30 + 9.313225746154785e-10) & 0x3FF] )
             {
               v12 = 0;
               if ( (v8[27] > 0.0) | __UNORDERED__(0.0, v8[27]) )

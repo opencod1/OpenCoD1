@@ -2211,13 +2211,13 @@ extern float tr_refdef_floatTime;   /* 0x016C5688, 4 bytes */
 extern float flt_16C57C8;   /* 0x016C57C8, 4 bytes */
 extern float flt_16C57CC;   /* 0x016C57CC, 4 bytes */
 extern float tr_diffuseSunSampleScale;   /* 0x016C57E8, 4 bytes */
-extern float flt_16D3850[5139];   /* 0x016D3850, 20556 bytes */
-extern float flt_16D4850[4115];   /* 0x016D4850, 16460 bytes */
+extern float tr_sinTable[5139];   /* 0x016D3850, 20556 bytes */
+extern float tr_squareTable[4115];   /* 0x016D4850, 16460 bytes */
 extern float flt_16D5050[3603];   /* 0x016D5050, 14412 bytes */
 extern float flt_16D5450[3347];   /* 0x016D5450, 13388 bytes */
-extern float flt_16D5850[3091];   /* 0x016D5850, 12364 bytes */
-extern float flt_16D6850[2067];   /* 0x016D6850, 8268 bytes */
-extern float flt_16D7850[1043];   /* 0x016D7850, 4172 bytes */
+extern float tr_triangleTable[3091];   /* 0x016D5850, 12364 bytes */
+extern float tr_sawToothTable[2067];   /* 0x016D6850, 8268 bytes */
+extern float tr_inverseSawToothTable[1043];   /* 0x016D7850, 4172 bytes */
 extern float backEnd_refdef_viewaxis10;   /* 0x016D89F0, 24 bytes */
 extern float backEnd_refdef_viewaxis11;   /* 0x016D89F4, 20 bytes */
 extern float backEnd_refdef_viewaxis12;   /* 0x016D89F8, 16 bytes */
@@ -2838,7 +2838,7 @@ extern int off_5712F8;   /* 0x005712F8, 788 bytes */
 extern int off_571340;   /* 0x00571340, 716 bytes */
 extern int off_5713C8;   /* 0x005713C8, 580 bytes */
 extern int off_571418;   /* 0x00571418, 500 bytes */
-extern int r_vidModes;   /* 0x005716C0, 224 bytes */
+//extern int r_vidModes;   /* 0x005716C0, 224 bytes */
 extern int z_errmsg;   /* 0x00571BA8, 96 bytes */
 extern int off_571BB0;   /* 0x00571BB0, 88 bytes */
 extern int off_571BB8;   /* 0x00571BB8, 80 bytes */

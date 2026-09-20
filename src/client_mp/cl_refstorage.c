@@ -19,29 +19,6 @@ short           tess_indexes[1097780];      /* 0x218068 bytes, 0x017A7F60 */
 unsigned char   tr_lightVisCache[2097152];        /* 0x200000 bytes, 0x00CA28D0 */
 
 typedef struct {
-    const char *description;
-    int         width;
-    int         height;
-    float       pixelAspect;
-} cod1_vidmode_t;
-
-cod1_vidmode_t r_vidModes[13] = {
-    { "Mode  0: 320x240",           320,   240, 1.0f },
-    { "Mode  1: 400x300",           400,   300, 1.0f },
-    { "Mode  2: 512x384",           512,   384, 1.0f },
-    { "Mode  3: 640x480",           640,   480, 1.0f },
-    { "Mode  4: 800x600",           800,   600, 1.0f },
-    { "Mode  5: 960x720",           960,   720, 1.0f },
-    { "Mode  6: 1024x768",         1024,   768, 1.0f },
-    { "Mode  7: 1152x864",         1152,   864, 1.0f },
-    { "Mode  8: 1280x1024",        1280,  1024, 1.0f },
-    { "Mode  9: 1600x1200",        1600,  1200, 1.0f },
-    { "Mode 10: 2048x1536",        2048,  1536, 1.0f },
-    { "Mode 11: 856x480 (wide)",    856,   480, 1.0f },
-    { "Mode 12: 1920x1200 (wide)", 1920,  1200, 1.0f }
-};
-
-typedef struct {
     const char *name;
     int         a;
     int         surfaceBits;

@@ -21,23 +21,25 @@
 extern int R_RenderView();
 
 /* ---- R_ToggleSmpFrame  0x004E96F0 ----  VERIFIED */
-int R_ToggleSmpFrame()
-{
-  int result;
+void R_ToggleSmpFrame( void ) {
+  *(_DWORD *)(backEndData + 1898240) = 0; //backEndData[tr.smpFrame]->commands.used = 0;
 
-  result = 0;
-  *(_DWORD *)(backEndData + 1898240) = 0;
   r_firstSceneDrawSurf = 0;
+
   r_numdlights = 0;
   r_firstSceneDlight = 0;
+
   r_numcoronas = 0;
   r_firstSceneCorona = 0;
+
   r_numentities = 0;
   r_firstSceneEntity = 0;
+
   r_numpolys = 0;
   r_firstScenePoly = 0;
+
   r_numpolyverts = 0;
-  return result;
+
 }
 
 /* ---- RE_ClearScene  0x004E9740 ----  VERIFIED */

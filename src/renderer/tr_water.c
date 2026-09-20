@@ -383,8 +383,8 @@ int __cdecl WaterFrequenciesAtTime(int a1, _DWORD *a2, float a3)
         v9 = a3 * *v6 * 162.9746551513671875;
         ftol_tempSpill = (int)v9;
         v7 = (int)v9 & 0x3FF;
-        *(float *)(a1 + 8 * v4) = flt_16D3850[((_WORD)v7 + 255) & 0x3FF] * *(float *)(a2[2] + 8 * v4);
-        *(float *)(a1 + 8 * v4 + 4) = flt_16D3850[v7] * *(float *)(a2[2] + 8 * v4 + 4);
+        *(float *)(a1 + 8 * v4) = tr_sinTable[((_WORD)v7 + 255) & 0x3FF] * *(float *)(a2[2] + 8 * v4);
+        *(float *)(a1 + 8 * v4 + 4) = tr_sinTable[v7] * *(float *)(a2[2] + 8 * v4 + 4);
       }
       ++v4;
     }
